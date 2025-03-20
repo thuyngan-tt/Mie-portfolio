@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <style>
+            *{
+                cursor: none
+            }
+            body {  
+                overflow: hidden;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .loading {
+                background-color: #ffffff;
+                display: fixed
+            }
+            .loading img {
+                display: block;
+                min-height: 209px;
+                min-width: 200px;
+            }
+            .mouse {
+                width: 25px;
+                height: 25px;
+                border-radius:100%;
+                background-color: #ff9182;
+                position: absolute;
+                animation: mouseAnimation .5s infinite ease-in-out alternate;
+                left: 0;
+                top:0
+            }
+            @keyframes mouseAnimation {
+                from {
+                    width: 25px;
+                    height: 25px;
+                }
+                to {
+                    width: 15px;
+                    height: 15px
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="loading">
+            <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbDgwbjZibzRza3lmaWhtZmxhZHU0YTExYndlZzA5ZzNmN2NoZTJnYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/tpVKvAabWt3G5csMkT/giphy.gif" alt="loading">
+        </div>
+        <div class="mouse original"></div>
+        <script>
+            $(".loading").height($(window).height());
+            $(".loading").width($(window).width());
+            $(".loading img").css({
+                paddingTop: ($(".loading").height()-$(".loading img").height()) /2, 
+                paddingLeft: ($(".loading").width()-$(".loading img").width()) /2
+            });
+            $(window).resize(function() {
+                "use strict";
+                $(".loading").height($(window).height());
+                $(".loading").width($(window).width());
+                $(".loading img").css({
+                paddingTop: ($(".loading").height()-$(".loading img").height()) /2, 
+                paddingLeft: ($(".loading").width()-$(".loading img").width()) /2
+                });
+            });
+            $(window).mousemove(function (e) 
+            {
+            "use strict;"
+            $(",original").css({
+                left: e.pagerX -16,
+                top: e.pageY - 16
+            }).removeClass("original");
+            });
+        </script>
+    </body>
+</html>
