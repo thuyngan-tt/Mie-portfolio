@@ -11,7 +11,6 @@
         <div id="header">
             <div class="container">
                 <nav>
-                    <img src="images/logoo.png" class="logo">
                     <ul>
                         <li><a href="#">Home</a></li>
                         <li><a href="#">About</a></li>
@@ -20,6 +19,62 @@
                         <li><a href="#">Contact</a></li>
                     </ul>
                 </nav>
+                <div class="header-text">
+                    <h1> Hi, I'm <span>Mie </span><br>from Vietnam!</h1>
+                </div>
             </div>
         </div>
+        <!-- ------------about-------- -->
+        <div id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="about-col-1">
+                        <img src="images/user.png">
+                    </div>    
+                    <div class="about-col-2">
+                        <h1> About me</h1>
+                        <p>I am an awesome cat, and I just celebrated my 4th birthday a week ago! 
+                        Ngan got me as a birthday gift four years ago, and we have been living together ever since. 
+                        I am a true introvert, do not like going outside and am not very friendly. 
+                        My favorite food is grass and the pate that Ngan makes for me.</p>
+
+                        <div class="tab-titles">
+                            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                            <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                            <p class="tab-links" onclick="opentab('education')">Education</p>
+                        </div>
+                        <div class="tab-contents active-tab" id="skills">
+                            <ul>
+                                <li><span>Web Development</span><br>Web app Development</li>
+                                <li><span>App Development</span><br>Building Android/IOS apps</li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="experience">
+                            <ul>
+                                <li><span>2021-current</span><br>dvvfgsugjakhf</li>
+                                <li><span>2019-2021</span><br>dfggfhhhifjhf</li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="education">
+                            <ul>
+                                <li><span>2015-2019</span><br>Hanoi University of civil engineering</li>
+                            </ul>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+        </div>
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+        function opentab(tabname) {
+            for(tablink of tablinks) 
+                tablink.classList.remove("active-link")
+            for(tabcontent of tabcontents) 
+                tabcontent.classList.remove("active-tab")
+            event.currentTarget.classList.add("active-link")
+            document.getElementById(tabname).classList.add("active-tab")
+        }
+    </script> 
     </body>
+</html>
